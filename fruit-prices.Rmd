@@ -1,0 +1,33 @@
+---
+title: "FRUIT AND NUT PRICES US"
+date: "21. April 2015"
+output: html_document
+---
+
+Data: Average price indexes, for fruit, Unites States, 1980 to date
+
+```{r, echo=FALSE, message=FALSE}
+library("gdata", lib.loc="/Library/Frameworks/R.framework/Versions/3.1/Resources/library")
+df <- read.xls ("~/Downloads/Table-A6.xlsx", sheet = 1, header = TRUE, stringsAsFactors=F)
+
+df <- df[-c(1:4),]
+
+names(df) <- c("Year", "Index of fruit and nuts prices received", "Index of fruit and nuts prices by grower", "fresh fruit", "dried fruit", "canned fruit", " ", "frozen fruit", " fresh fruit 2", "processed fruit")
+
+df <- df[,-7]
+```
+Price develeopment of fresh fruits in the US of the past 35 years.
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+plot(df[,1], df[,4], type="l", main="Prices of Fresh Fruits in US",
+     xlab="Year", ylab="Fresh Fruit Price")
+```
+
+Price develeopment of dried fruits in the US of the past 35 years.
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+plot(df[,1], df[,5], type="l", main="Prices of Dried Fruits in US",
+     xlab="Year", ylab="Dried Fruit Price")
+```
+
+```
+source: http://ers.usda.gov/data-products/fruit-and-tree-nut-data/documentation.aspx
+```
