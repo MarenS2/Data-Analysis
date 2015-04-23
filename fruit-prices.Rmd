@@ -22,12 +22,51 @@ plot(df[,1], df[,4], type="l", main="Prices of Fresh Fruits in US",
      xlab="Year", ylab="Fresh Fruit Price")
 ```
 
+mean price
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+mean(na.omit(as.numeric(na.omit(df[,4]))))
+```
+year with the minimal price niveau
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+df[which.min(na.omit(as.numeric(na.omit(df[,4])))),1]
+```
+and a minimum at
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+min(na.omit(as.numeric(na.omit(df[,4]))))
+```
+year with the maximal price niveau
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+df[which.max(na.omit(as.numeric(na.omit(df[,4])))),1]
+```
+and a maximum at
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+max(na.omit(as.numeric(na.omit(df[,4]))))
+```
 Price develeopment of dried fruits in the US of the past 35 years.
 ```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
 plot(df[,1], df[,5], type="l", main="Prices of Dried Fruits in US",
      xlab="Year", ylab="Dried Fruit Price")
 ```
 
+mean price
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+mean(na.omit(as.numeric(na.omit(df[,5]))))
+```
+year with the minimal price niveau
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+df[which.min(na.omit(as.numeric(na.omit(df[,5])))),1]
+```
+and a minimum at
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+min(na.omit(as.numeric(na.omit(df[,5]))))
+```
+year with the maximal price niveau
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+df[which.max(na.omit(as.numeric(na.omit(df[,5])))),1]
+```
+and a maximum at
+```{r, results=TRUE, error=FALSE, echo=FALSE, warning=FALSE}
+max(na.omit(as.numeric(na.omit(df[,5]))))
 ```
 source: http://ers.usda.gov/data-products/fruit-and-tree-nut-data/documentation.aspx
 ```
